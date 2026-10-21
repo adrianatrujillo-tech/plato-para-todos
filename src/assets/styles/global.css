@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+
+    /* COLORES */
+
+    --primary-color: #2E7D5A;
+    --primary-hover: #25664A;
+
+    --secondary-color: #F59E0B;
+    --secondary-hover: #D97706;
+
+    --accent-color: #EF4444;
+
+    /* FONDOS */
+
+    --background-page: #F8FAF8;
+    --background-light: #EEF5F0;
+    --background-card: #FFFFFF;
+    --background-dark: #1F2937;
+
+    /* TEXTOS */
+
+    --text-dark: #1F2937;
+    --text-medium: #6B7280;
+    --text-light: #FFFFFF;
+    --text-muted: #9CA3AF;
+
+    /* ESTADOS */
+
+    --success-color: #22C55E;
+    --warning-color: #F59E0B;
+    --danger-color: #EF4444;
+    --info-color: #3B82F6;
+
+    /* BORDES */
+
+    --border-color: #E5E7EB;
+    --border-light: #F3F4F6;
+
+    /* SOMBRAS */
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.05);
+
+    --shadow-md:
+        0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-lg:
+        0 10px 30px rgba(0,0,0,.12);
+
+    --shadow-xl:
+        0 20px 40px rgba(0,0,0,.15);
+
+    /* TIPOGRAFIA */
+
+    --font-primary:
+        'Poppins',
+        sans-serif;
+
+    /* TAMAÑOS */
+
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 24px;
+    --font-xxl: 32px;
+    --font-display: 48px;
+    --font-hero: 64px;
+
+    /* ESPACIADOS */
+
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 40px;
+    --space-xl: 80px;
+    --space-xxl: 120px;
+
+    /* RADIOS */
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    --radius-round: 999px;
+
+    /* CONTENEDOR */
+
+    --container-lg: 1280px;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: var(--font-primary);
+
+    background: var(--background-page);
+
+    color: var(--text-dark);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+}
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+ul,
+ol {
+
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+
+    font-family: var(--font-primary);
+}
+
+button:disabled,
+.btn:disabled {
+
+    cursor: not-allowed;
+
+    opacity: .55;
+
+    transform: none;
+}
+
+/* ==========================================
+   TITULOS
+========================================== */
+
+h1 {
+
+    font-size: var(--font-hero);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+h2 {
+
+    font-size: var(--font-display);
+
+    font-weight: 700;
+}
+
+h3 {
+
+    font-size: var(--font-xl);
+
+    font-weight: 600;
+}
+
+h4 {
+
+    font-size: var(--font-lg);
+
+    font-weight: 600;
+}
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: var(--container-lg);
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+}
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+.section {
+
+    padding: 100px 0;
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 24px;
+
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    min-height: 48px;
+
+    border: none;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.btn-primary {
+
+    background: var(--primary-color);
+
+    color: white;
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+
+    border: 2px solid var(--primary-color);
+
+    color: var(--primary-color);
+
+    background: transparent;
+}
+
+.btn-secondary:hover {
+
+    background: var(--primary-color);
+
+    color: white;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    transition: .3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: none;
+
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 4px rgba(46,125,90,.15);
+}
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+input,
+select,
+textarea,
+button {
+
+    font-size: 16px;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card {
+
+    background: white;
+
+    border-radius: var(--radius-lg);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    border-radius: var(--radius-round);
+
+    font-size: var(--font-sm);
+
+    font-weight: 600;
+}
+
+/* ==========================================
+   TABLAS
+========================================== */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.table-card,
+.table-container {
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+th,
+td {
+
+    padding: 16px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid {
+
+    display: grid;
+
+    gap: 24px;
+
+    min-width: 0;
+}
+
+.grid-2 {
+
+    grid-template-columns: repeat(2,1fr);
+}
+
+.grid-3 {
+
+    grid-template-columns: repeat(3,1fr);
+}
+
+.grid-4 {
+
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .container {
+
+        padding: 0 18px;
+    }
+
+    .grid-4 {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .grid-3 {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    h1 {
+
+        font-size: 48px;
+    }
+
+    h2 {
+
+        font-size: 38px;
+    }
+}
+
+@media(max-width:768px){
+
+    .container {
+
+        padding: 0 16px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+
+        padding: 70px 0;
+    }
+
+    h1 {
+
+        font-size: 38px;
+    }
+
+    h2 {
+
+        font-size: 30px;
+    }
+
+    h3 {
+
+        font-size: 22px;
+    }
+
+    .card {
+
+        border-radius: 16px;
+
+        padding: 20px;
+    }
+
+    .btn {
+
+        width: 100%;
+
+        padding: 13px 18px;
+    }
+
+    table {
+
+        min-width: 680px;
+    }
+
+    th,
+    td {
+
+        padding: 12px;
+    }
+}
+
+@media(max-width:480px){
+
+    .container {
+
+        padding: 0 14px;
+    }
+
+    .section {
+
+        padding: 52px 0;
+    }
+
+    h1 {
+
+        font-size: 32px;
+    }
+
+    h2 {
+
+        font-size: 26px;
+    }
+
+    h3 {
+
+        font-size: 20px;
+    }
+
+    .card {
+
+        padding: 18px;
+    }
+}

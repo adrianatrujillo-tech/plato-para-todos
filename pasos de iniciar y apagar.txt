@@ -1,0 +1,223 @@
+Ahora que ya lo tienes funcionando, este es el **procedimiento correcto** para iniciar y cerrar tu proyecto **Plato Para Todos**.
+
+# 🚀 Iniciar el programa
+
+## Paso 1: Abrir el Backend
+
+Abre una terminal de PowerShell.
+
+Ir a la carpeta del backend:
+
+```powershell
+cd "C:\Users\Laly\Downloads\frontend-plato-para-todos\backend-plato-para-todos"
+```
+
+Ejecutar:
+
+```powershell
+mvn spring-boot:run
+```
+
+Esperar hasta ver algo parecido a:
+
+```text
+Tomcat started on port 8080 (http)
+Started BackendPlatoParaTodosApplication
+```
+
+Verificar:
+
+```text
+http://localhost:8080/api/usuarios
+```
+
+Si aparece el JSON de usuarios, el backend está funcionando.
+
+---
+
+## Paso 2: Abrir el Frontend
+
+Abrir una segunda terminal.
+
+Ir a la carpeta principal del frontend:
+
+```powershell
+cd "C:\Users\Laly\Downloads\frontend-plato-para-todos"
+```
+
+Ejecutar:
+
+```powershell
+npm run dev
+```
+
+Esperar hasta ver:
+
+```text
+VITE v8.0.16 ready
+
+Local: http://localhost:5173/
+```
+
+---
+
+## Paso 3: Abrir la aplicación
+
+En el navegador abrir:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Paso 4: Iniciar sesión
+
+Usuarios de prueba:
+
+### Administrador
+
+```text
+admin@test.com
+123456
+```
+
+### Donador
+
+```text
+donador@test.com
+123456
+```
+
+### Beneficiario
+
+```text
+beneficiario@test.com
+123456
+```
+
+---
+
+# 🛑 Cerrar el programa
+
+## Paso 1: Cerrar Frontend
+
+Ir a la terminal donde ejecutaste:
+
+```powershell
+npm run dev
+```
+
+Presionar:
+
+```text
+Ctrl + C
+```
+
+Confirmar:
+
+```text
+S
+```
+
+o
+
+```text
+Y
+```
+
+---
+
+## Paso 2: Cerrar Backend
+
+Ir a la terminal donde ejecutaste:
+
+```powershell
+mvn spring-boot:run
+```
+
+Presionar:
+
+```text
+Ctrl + C
+```
+
+Confirmar:
+
+```text
+S
+```
+
+o
+
+```text
+Y
+```
+
+---
+
+## Paso 3: Verificar que cerró correctamente
+
+Verificar backend:
+
+```powershell
+netstat -ano | findstr :8080
+```
+
+No debe aparecer:
+
+```text
+LISTENING
+```
+
+Verificar frontend:
+
+```powershell
+netstat -ano | findstr :5173
+```
+
+No debe aparecer:
+
+```text
+LISTENING
+```
+
+---
+
+# 📋 Resumen rápido
+
+### Encender
+
+```powershell
+# Terminal 1
+cd "C:\Users\Laly\Downloads\frontend-plato-para-todos\backend-plato-para-todos"
+mvn spring-boot:run
+
+# Terminal 2
+cd "C:\Users\Laly\Downloads\frontend-plato-para-todos"
+npm run dev
+```
+
+Abrir:
+
+```text
+http://localhost:5173
+```
+
+---
+
+### Apagar
+
+```text
+Ctrl + C  (frontend)
+Ctrl + C  (backend)
+```
+
+Luego verificar:
+
+```powershell
+netstat -ano | findstr :8080
+netstat -ano | findstr :5173
+```
+
+Si no aparece `LISTENING`, todo quedó cerrado correctamente.
