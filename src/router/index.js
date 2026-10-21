@@ -94,4 +94,14 @@ const router = createRouter({
   ],
 })
 
+router.beforeEach((to) => {
+  const protegido=to.path.match(/^\/(donador|beneficiario|admin)(\/|$)/)
+  if(!protegido)return true
+  let usuario
+  try { usuario=JSON.parse(localStorage.getItem('usuario')||'null') } catch { usuario=null }
+  if(!localStorage.getItem('token')||!usuario)return '/login'
+  if(usuario.rol?.toLowerCase()!==protegido[1])return '/login'
+  return true
+})
+
 export default router

@@ -1,0 +1,10 @@
+.git
+node_modules
+dist
+**/target
+.run-logs
+.agents
+.vscode
+.env
+.env.*
+*.log

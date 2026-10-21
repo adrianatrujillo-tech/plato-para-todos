@@ -1,10 +1,15 @@
 import { defineStore } from 'pinia'
+import { api } from '../services/api'
+
+function leerUsuario() {
+    try { return JSON.parse(localStorage.getItem('usuario') || 'null') } catch { return null }
+}
 
 export const useAuthStore = defineStore('auth', {
 
     state: () => ({
 
-        usuario: JSON.parse(localStorage.getItem('usuario') || 'null'),
+        usuario: leerUsuario(),
 
         token: localStorage.getItem('token'),
 
@@ -43,6 +48,7 @@ export const useAuthStore = defineStore('auth', {
         },
 
         logout() {
+            api.logout().catch(() => {})
 
             this.usuario = null
 

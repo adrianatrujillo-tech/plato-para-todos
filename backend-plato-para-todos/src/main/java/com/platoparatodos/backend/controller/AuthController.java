@@ -17,20 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    private final AuthService authService;
+  private final AuthService authService;
+  private final com.platoparatodos.backend.service.TokenService tokens;
 
-    public AuthController(AuthService authService) {
-        this.authService = authService;
-    }
+  public AuthController(
+      AuthService authService, com.platoparatodos.backend.service.TokenService tokens) {
+    this.tokens = tokens;
+    this.authService = authService;
+  }
 
-    @PostMapping("/login")
-    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
-        return authService.login(request);
-    }
+  @PostMapping("/login")
+  public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+    return authService.login(request);
+  }
 
-    @PostMapping("/registro")
-    @ResponseStatus(HttpStatus.CREATED)
-    public UsuarioResponse registrar(@Valid @RequestBody UsuarioRequest request) {
-        return authService.registrar(request);
-    }
+  @PostMapping("/logout")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void logout(
+      @org.springframework.web.bind.annotation.RequestHeader(
+              value = "Authorization",
+              required = false)
+          String h) {
+    if (h != null && h.startsWith("Bearer ")) tokens.revocar(h.substring(7));
+  }
+
+  @PostMapping("/registro")
+  @ResponseStatus(HttpStatus.CREATED)
+  public UsuarioResponse registrar(@Valid @RequestBody UsuarioRequest request) {
+    return authService.registrar(request);
+  }
 }

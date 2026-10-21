@@ -42,3 +42,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Despliegue y acceso en Internet
+
+Para publicar Vue, Spring Boot y MySQL en Railway, sigue [DEPLOYMENT.md](DEPLOYMENT.md). La aplicación usa un solo dominio para la interfaz y la API, variables de entorno para MySQL y un endpoint de salud.
+
+El registro y la API requieren tokens verificados. El registro público no crea administradores y las cuentas de ejemplo están desactivadas por defecto. Usa datos ficticios en esta demostración académica. Las pantallas administrativas originales son provisionales y no constituyen un panel terminado.

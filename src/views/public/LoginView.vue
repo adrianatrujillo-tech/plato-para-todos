@@ -51,15 +51,6 @@
                                 required>
                         </div>
 
-                        <div class="login-options">
-                            <label>
-                                <input type="checkbox">
-                                Recordarme
-                            </label>
-
-                            <a href="#">Olvidaste tu contrasena?</a>
-                        </div>
-
                         <button
                             type="submit"
                             class="btn-login"

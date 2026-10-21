@@ -54,3 +54,4 @@ dist/
 !.env.example
 *.log
 .eslintcache
+**/node_modules/
