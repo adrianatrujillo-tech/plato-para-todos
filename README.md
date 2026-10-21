@@ -1,4 +1,10 @@
-# frontend-plato-para-todos
+# Plato para Todos
+
+## Demo en línea
+
+[**Abrir Plato para Todos**](https://plato-para-todos-production.up.railway.app)
+
+Aplicación académica para conectar donadores de alimentos con beneficiarios, desarrollada con Vue, Spring Boot y MySQL y desplegada en Railway. Puedes crear una cuenta de donador o beneficiario para probarla; utiliza datos ficticios.
 
 This template should help get you started developing with Vue 3 in Vite.
 
